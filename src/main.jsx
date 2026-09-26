@@ -10,6 +10,11 @@ const work = [
     result: "1.8K → 52K Instagram followers",
     detail: "Built a content, influencer and performance engine for a 50+ store retail network.",
     metrics: ["52K followers", "4M+ viral reel", "6.5M+ viral reel", "200+ DMs/day"],
+    period: "2023 — 2025 · 1.9 years",
+    role: "Digital Marketing Manager",
+    startingPoint: ["1.8K Instagram followers", "2-person team", "No Google Ads account", "No Google Business locations"],
+    approach: ["Influencer marketing + regional creators", "3-second hooks + segmented offers", "CRM-led product sales tracking", "Meta acquisition + WooCommerce funnel"],
+    evidence: ["First influencer reel: ₹2–3L reported revenue", "Realme GT5: 5 units sold at Khammam in 30 days", "50 mobiles sold across stores for the promoted product", "21,642 followers recorded in May 2024 working log"],
     story: [
       "Joined when the Instagram account had 1.8K followers and had been inactive for around two months.",
       "Built an influencer-led content system using short hooks, segmented offers, regional meme pages and festival collaborations.",
@@ -201,7 +206,9 @@ function App() {
             <h2>{selected.client}</h2>
             <p className="modal-result">{selected.result}</p>
             <div className="modal-metrics">{selected.metrics.map((m) => <span key={m}>{m}</span>)}</div>
-            <div className="story">{selected.story.map((s, i) => <p key={i}>{s}</p>)}</div>
+            {selected.id === "cellbay" && <div className="case-detail-grid"><div><p className="case-label">STARTING POINT</p>{selected.startingPoint.map((x) => <span className="case-pill" key={x}>{x}</span>)}</div><div><p className="case-label">APPROACH</p>{selected.approach.map((x) => <span className="case-pill" key={x}>{x}</span>)}</div></div>}
+            <div className="story"><p className="case-label">CASE STUDY</p>{selected.story.map((s, i) => <p key={i}>{s}</p>)}</div>
+            {selected.id === "cellbay" && <div className="evidence"><p className="case-label">WORKING EVIDENCE</p>{selected.evidence.map((x) => <div key={x}>✓ {x}</div>)}</div>}
           </article>
         </div>
       )}
