@@ -1,16 +1,18 @@
 # Yashaswi Surya — Digital Marketing Portfolio
 
-A React + Vite portfolio focused on measurable digital marketing work across retail, media, real estate, travel and performance marketing.
+Production-ready React + Vite portfolio focused on measurable digital marketing work across retail, media, real estate, travel and performance marketing.
 
 ## Included
 
 - Responsive portfolio landing page
-- Selected-work case study modals
+- 7 selected client case studies
 - Expanded Cellbay flagship case study
-- Metrics and proof section
-- Growth process section
+- Interactive case-study modals
+- Proof metrics and growth process
 - About, capabilities and contact sections
+- Mobile-responsive layout
 - GitHub Pages deployment workflow
+- Production metadata for sharing/search previews
 
 ## Run locally
 
@@ -19,16 +21,26 @@ npm install
 npm run dev
 ```
 
-## Build
+## Production build
 
 ```bash
 npm run build
+npm run preview
 ```
 
-The production output is generated in `dist/`.
+## Deploy
 
-## Deployment
+The repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml`.
 
-The repository includes a GitHub Actions workflow at `.github/workflows/deploy.yml` that builds and deploys the portfolio to GitHub Pages whenever `main` is updated.
+One GitHub setting is required once:
+
+1. Open **Settings → Pages**
+2. Under **Build and deployment**, choose **GitHub Actions**
+3. Save
+4. Pushes to `main` build and deploy automatically
+
+The Contact section intentionally does not invent a personal email address. Add your preferred professional email or LinkedIn URL in `src/main.jsx` before public launch.
+
+Client figures are presented as portfolio evidence and labeled as reported/recorded where appropriate. Confidential or NDA-restricted material should remain omitted.
 
 Repository: https://github.com/Yashaswisurya/Yashaswis-GPT-Repo
