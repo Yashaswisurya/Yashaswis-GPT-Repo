@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { createRoot } from "react-dom/client";
 import "./styles.css";
 
@@ -211,7 +211,7 @@ function App() {
         <section className="contact" id="contact">
           <p className="eyebrow">CONTACT</p>
           <h2>Have a growth problem<br />worth <em>solving?</em></h2>
-          <a className="contact-link" href="mailto:hello@yashaswisurya.com">hello@yashaswisurya.com ↗</a>
+          <div className="contact-actions"><a className="contact-link" href="https://github.com/Yashaswisurya" target="_blank" rel="noreferrer">Open GitHub profile ↗</a><a className="contact-secondary" href="https://github.com/Yashaswisurya/Yashaswis-GPT-Repo" target="_blank" rel="noreferrer">View portfolio repository</a></div><p className="contact-note">Add your preferred professional email or LinkedIn URL here before publishing.</p>
         </section>
       </main>
 
@@ -226,7 +226,7 @@ function App() {
             <p className="modal-result">{selected.result}</p>
             <div className="modal-metrics">{selected.metrics.map((m) => <span key={m}>{m}</span>)}</div>
             <div className="case-detail-grid"><div><p className="case-label">{selected.id === "cellbay" ? "STARTING POINT" : "FOCUS"}</p>{(selected.id === "cellbay" ? selected.startingPoint : selected.focus).map((x) => <span className="case-pill" key={x}>{x}</span>)}</div><div><p className="case-label">{selected.id === "cellbay" ? "APPROACH" : "SCOPE"}</p>{(selected.id === "cellbay" ? selected.approach : selected.focus).map((x) => <span className="case-pill" key={x}>{x}</span>)}</div></div>
-            <div className="story"><p className="case-label">CASE STUDY</p>{selected.story.map((s, i) => <p key={i}>{s}</p>)}</div>
+            <div className="story"><p className="case-label">CASE STUDY</p>{selected.story.map((s, i) => <p key={i}>{s}</p>)}</div><p className="modal-disclaimer">Selected figures are based on campaign records, working logs and reported outcomes. Some client details and supporting assets are omitted or generalized where confidentiality/NDA restrictions apply.</p>
             {selected.id === "cellbay" && <div className="evidence"><p className="case-label">WORKING EVIDENCE</p>{selected.evidence.map((x) => <div key={x}>✓ {x}</div>)}</div>}
           </article>
         </div>
