@@ -28,6 +28,7 @@ const work = [
     type: "Performance Marketing",
     result: "₹2.8 Cr conversions in 3 months",
     detail: "Three Meta campaigns focused on conversion and audience growth.",
+    focus: ["Meta conversion campaigns", "Audience acquisition", "Social growth"],
     metrics: ["₹2.8 Cr conversions", "3 campaigns", "500 followers"],
     story: [
       "Planned and executed three Meta campaigns around conversion-focused acquisition.",
@@ -41,6 +42,7 @@ const work = [
     type: "YouTube · News",
     result: "$500 → $5,000 revenue in 2 months",
     detail: "Managed content operations and a 20+ editor team for a Telugu news ecosystem.",
+    focus: ["YouTube monetization", "Editorial operations", "Multi-channel publishing"],
     metrics: ["10× revenue", "20+ editors", "8 channels", "6K videos/month"],
     story: [
       "Managed HMTV Telugu News Live and a wider multi-channel content operation.",
@@ -54,6 +56,7 @@ const work = [
     type: "Organic Growth",
     result: "20K Instagram followers organically",
     detail: "Scaled social and YouTube without paid media budget.",
+    focus: ["Organic social", "YouTube growth", "Content distribution"],
     metrics: ["20K IG followers", "$0 → $3K YouTube", "12K subscribers"],
     story: [
       "Built an organic content and distribution approach over nine months.",
@@ -67,6 +70,7 @@ const work = [
     type: "Lead Generation",
     result: "7,000+ leads generated",
     detail: "Combined paid acquisition with social growth for a property-focused campaign.",
+    focus: ["Lead generation", "Paid acquisition", "Audience growth"],
     metrics: ["7K+ leads", "300 → 3.7K followers", "₹45K/month spend"],
     story: [
       "Built lead-generation campaigns designed around qualified enquiry volume.",
@@ -80,6 +84,7 @@ const work = [
     type: "Real Estate · Lead Gen",
     result: "3 plot sales from 3 campaigns",
     detail: "Ran campaigns across Shadnagar, Gachibowli and Jubilee Hills.",
+    focus: ["Real-estate lead generation", "Location-based campaigns", "Sales attribution"],
     metrics: ["3 campaigns", "3 locations", "300+ leads"],
     story: [
       "Set up lead-generation campaigns for three Hyderabad locations.",
@@ -93,6 +98,7 @@ const work = [
     type: "Social Media · USA",
     result: "International audience growth",
     detail: "Social media and Meta campaigns for a US-based travel insurance business.",
+    focus: ["Social media", "Meta campaigns", "North America audience"],
     metrics: ["700+ follower growth", "North America", "Meta campaigns"],
     story: [
       "Worked as Social Media Specialist for a US-based travel insurance agency.",
@@ -180,6 +186,19 @@ function App() {
           </div>
         </section>
 
+        <section className="process section">
+          <div className="section-head">
+            <div><p className="eyebrow">HOW I WORK</p><h2>From brief<br /><em>to business result.</em></h2></div>
+            <p className="section-note">A practical growth process that connects strategy, creative execution, distribution and measurement.</p>
+          </div>
+          <div className="process-grid">
+            <div><span>01</span><h3>Diagnose</h3><p>Understand the audience, offer, funnel and the business metric that actually matters.</p></div>
+            <div><span>02</span><h3>Build</h3><p>Create the content, campaign structure and channel system needed to reach that audience.</p></div>
+            <div><span>03</span><h3>Distribute</h3><p>Use organic, paid, influencer and platform-native distribution to create momentum.</p></div>
+            <div><span>04</span><h3>Measure</h3><p>Track the signal through platform analytics, CRM data, leads, sales or revenue.</p></div>
+          </div>
+        </section>
+
         <section className="about section" id="about">
           <div><p className="eyebrow">ABOUT</p><h2>Creative thinking.<br /><em>Performance mindset.</em></h2></div>
           <div className="about-copy">
@@ -206,7 +225,7 @@ function App() {
             <h2>{selected.client}</h2>
             <p className="modal-result">{selected.result}</p>
             <div className="modal-metrics">{selected.metrics.map((m) => <span key={m}>{m}</span>)}</div>
-            {selected.id === "cellbay" && <div className="case-detail-grid"><div><p className="case-label">STARTING POINT</p>{selected.startingPoint.map((x) => <span className="case-pill" key={x}>{x}</span>)}</div><div><p className="case-label">APPROACH</p>{selected.approach.map((x) => <span className="case-pill" key={x}>{x}</span>)}</div></div>}
+            <div className="case-detail-grid"><div><p className="case-label">{selected.id === "cellbay" ? "STARTING POINT" : "FOCUS"}</p>{(selected.id === "cellbay" ? selected.startingPoint : selected.focus).map((x) => <span className="case-pill" key={x}>{x}</span>)}</div><div><p className="case-label">{selected.id === "cellbay" ? "APPROACH" : "SCOPE"}</p>{(selected.id === "cellbay" ? selected.approach : selected.focus).map((x) => <span className="case-pill" key={x}>{x}</span>)}</div></div>
             <div className="story"><p className="case-label">CASE STUDY</p>{selected.story.map((s, i) => <p key={i}>{s}</p>)}</div>
             {selected.id === "cellbay" && <div className="evidence"><p className="case-label">WORKING EVIDENCE</p>{selected.evidence.map((x) => <div key={x}>✓ {x}</div>)}</div>}
           </article>
